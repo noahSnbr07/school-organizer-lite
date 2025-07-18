@@ -33,3 +33,7 @@ body {
 ::-webkit-scrollbar {
   width: 0;
 }
+
+* {
+  transition: 250ms ease-out;
+}

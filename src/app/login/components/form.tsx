@@ -79,6 +79,8 @@ export default function Form() {
             <div className='w-full h-1 bg-stack rounded-full'></div>
 
             <button
+                disabled={pending}
+                style={{ opacity: pending ? .5 : 1 }}
                 className='cursor-pointer p-2 bg-foreground text-background font-bold rounded-md'
                 type="submit">
                 {pending ? <Spinner /> : "Submit"}
