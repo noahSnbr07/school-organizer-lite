@@ -1,0 +1,126 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  //base
+  id      String   @id @unique @default(uuid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  //props 
+  name      String
+  hash      String
+  suspended Boolean   @default(false)
+  absences  Absence[]
+  events    Event[]
+  grades    Grade[]
+  subjects  Subject[]
+
+  //relations 
+}
+
+model Event {
+  //base
+  id      String   @id @unique @default(uuid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  //props
+  type    EventType
+  name    String    @default("New Event")
+  date    DateTime
+  subject Subject   @relation(fields: [subjectId], references: [id])
+
+  //relations 
+  subjectId String
+  User      User?   @relation(fields: [userId], references: [id])
+  userId    String?
+}
+
+model Grade {
+  //base
+  id      String   @id @unique @default(uuid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  //props
+  subject Subject @relation(fields: [subjectId], references: [id])
+  score   Int
+  passed  Boolean
+  metGoal Boolean
+
+  //relations 
+  subjectId String
+  User      User?   @relation(fields: [userId], references: [id])
+  userId    String?
+}
+
+model Subject {
+  //base
+  id      String   @id @unique @default(uuid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  //props
+  name     String  @default("New Subject")
+  color    String
+  advanced Boolean @default(false)
+
+  //relations 
+  Event     Event[]
+  Grade     Grade[]
+  Absence   Absence? @relation(fields: [absenceId], references: [id])
+  absenceId String?
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+}
+
+model Absence {
+  //base
+  id      String   @id @unique @default(uuid())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+
+  //props
+  approved Boolean     @default(false)
+  subjects Subject[]
+  type     AbsenceType @default(full)
+  reason   String
+
+  //relations 
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String?
+}
+
+enum EventType {
+  Homework
+  Exam
+  Test
+  Note
+}
+
+enum GradeType {
+  Exam
+  Test
+}
+
+enum AbsenceType {
+  partial
+  full
+}
+
+enum GradingSystem {
+  normal
+  advanced
+}
