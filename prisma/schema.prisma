@@ -19,7 +19,7 @@ model User {
   updated DateTime @updatedAt
 
   //props 
-  name      String
+  name      String    @unique
   hash      String
   suspended Boolean   @default(false)
   absences  Absence[]

@@ -25,11 +25,12 @@ const apiResponseTemplates = {
         data: null,
         message,
     }),
-    internalServerError: (message: string = "internal server error"): APIResponse<null> => ({
+    internalServerError: (error: Error | string, message: string = "internal server error"): APIResponse<null> => ({
         success: false,
         status: 500,
         data: null,
         message,
+        error
     }),
     serviceUnavailable: (message: string = "service unavailable"): APIResponse<null> => ({
         success: false,
