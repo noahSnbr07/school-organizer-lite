@@ -50,6 +50,6 @@ export async function POST(_request: NextRequest): Promise<NextResponse<APIRespo
         return NextResponse.json(apiResponseTemplates.created("logged in successfully"));
 
     } catch (error) {
-        return NextResponse.json(apiResponseTemplates.internalServerError(error as Error));
+        if (error instanceof Error) return NextResponse.json(apiResponseTemplates.internalServerError(error, error.message));
     }
 }
