@@ -17,24 +17,16 @@ export default async function page() {
         <div className="size-full p-4 grid grid-cols-2 grid-rows-2 gap-4">
             <QuickInsightCard
                 id={0}
-                title="Grades"
-                children={<GradeList grades={data.grades} />}
-            />
+                title="Grades"> <GradeList grades={data.grades} /> </QuickInsightCard>
             <QuickInsightCard
                 id={1}
-                title="Absences"
-                children={<AbsenceList absences={data.absences} />}
-            />
+                title="Absences"> <AbsenceList absences={data.absences} /> </QuickInsightCard>
             <QuickInsightCard
                 id={2}
-                title="Events"
-                children={<EventList events={data.events} />}
-            />
+                title="Events"> <EventList events={data.events} /> </QuickInsightCard>
             <QuickInsightCard
                 id={3}
-                title="Subjects"
-                children={<SubjectList subjects={data.subjects} />}
-            />
+                title="Subjects"> <SubjectList subjects={data.subjects} /> </QuickInsightCard>
         </div>
     );
 }

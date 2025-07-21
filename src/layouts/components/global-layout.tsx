@@ -25,7 +25,7 @@ export default async function GlobalLayout({ children }: _props) {
                     priority
                     title="Banner" />
                 <div className="flex flex-col gap-2">
-                    {asideLinks.map((link, _index: number) =>
+                    {asideLinks.map((link) =>
                         <Link
                             style={{ background: pathname === link.href ? "var(--stack)" : "transparent" }}
                             key={link.id}
