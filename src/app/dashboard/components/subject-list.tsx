@@ -10,7 +10,7 @@ export default async function SubjectList({ subjects }: _props) {
 
     return (
         <div className="h-full overflow-y-auto grid grid-cols-2 gap-4 content-start">
-            {subjects.map((subject, _index: number) => (
+            {subjects.map((subject) => (
                 <Link
                     key={subject.id}
                     className="flex gap-4 px-4 py-2 bg-stack rounded-md h-min items-center"

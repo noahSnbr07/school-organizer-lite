@@ -11,7 +11,7 @@ export default async function AbsenceList({ absences }: _props) {
 
     return (
         <div className="h-full overflow-y-auto grid grid-cols-2 gap-4 content-start">
-            {absences.map((absence, _index: number) => (
+            {absences.map((absence) => (
                 <Link
                     key={absence.id}
                     className="flex gap-4 px-4 py-2 bg-stack rounded-md h-min"

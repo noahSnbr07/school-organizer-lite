@@ -10,7 +10,7 @@ export default async function EventList({ events }: _props) {
 
     return (
         <div className="h-full overflow-y-auto grid grid-cols-2 gap-4 content-start">
-            {events.map((event, _index: number) => (
+            {events.map((event) => (
                 <Link
                     style={{ borderLeft: `8px solid ${event.subject.color}` }}
                     key={event.id}
