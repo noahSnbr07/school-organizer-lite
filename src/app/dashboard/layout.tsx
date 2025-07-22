@@ -9,7 +9,6 @@ interface _props {
 
 export default async function layout({ children }: _props) {
 
-
     return (
         <GlobalLayout>
             {children}

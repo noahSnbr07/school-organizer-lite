@@ -14,6 +14,8 @@ export default async function page() {
     const data = await getData({ take: 10 });
     if (!data) redirect("/");
 
+    //TODO: map insight cards to reduce code
+
     return (
         <div className="size-full flex flex-col p-4 gap-4">
             <HyperlinkPills />
