@@ -1,6 +1,7 @@
 import AsideLink from "@/interfaces/aside-link";
 import { AwardIcon, BookCopyIcon, CalendarIcon, ClockIcon, HomeIcon } from "lucide-react";
 
+//links to all pages mapping resources
 const asideLinks: AsideLink[] = [
     { id: 0, href: "/dashboard", icon: <HomeIcon opacity={.5} size={20} />, label: "Dashboard" },
     { id: 1, href: "/agenda", icon: <ClockIcon opacity={.5} size={20} />, label: "Agenda" },

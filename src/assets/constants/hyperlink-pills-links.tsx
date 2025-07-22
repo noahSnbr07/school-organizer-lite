@@ -1,6 +1,7 @@
 import { PlusIcon } from "lucide-react";
 import React from "react";
 
+//hyperlinks displayed in /dashboard to create resources
 export interface HyperlinkPill {
     id: number;
     label: string;
