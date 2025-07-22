@@ -1,6 +1,6 @@
 import { banner } from "@/assets/assets";
 import asideLinks from "@/assets/constants/aside-link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, LogOutIcon } from "lucide-react";
 import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,6 +36,17 @@ export default async function GlobalLayout({ children }: _props) {
                         </Link>
                     )}
                 </div>
+                <form
+                    className="w-full pl-4 pr-2"
+                    action="/api/auth/logout"
+                    method="post">
+                    <button
+                        className="hover:bg-foreground hover:text-background flex p-4 gap-4 font-bold items-center bg-stack rounded-md w-full"
+                        type="submit">
+                        <LogOutIcon size={16} />
+                        Logout
+                    </button>
+                </form>
             </aside>
             <div className="flex flex-col flex-1 h-full">
                 <header className="p-4 flex justify-between border-b-2 border-stack">

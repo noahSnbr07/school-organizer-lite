@@ -37,3 +37,8 @@ body {
 * {
   transition: 250ms ease-out;
 }
+
+button:hover,
+a:hover {
+  cursor: pointer;
+}
