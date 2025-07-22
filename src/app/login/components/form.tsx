@@ -39,7 +39,7 @@ export default function Form() {
             const data: APIResponse<null> = await response.json();
 
             //revalidate new session
-            if (data.success) router.push("/");
+            if (data.success) router.push("/dashboard");
 
             //display error
             else setMessage(data.message);
