@@ -1,3 +1,5 @@
+//minified/compressed types to reduce payload during load of dashboard
+
 interface CompressedGrade {
     id: string;
     score: number;

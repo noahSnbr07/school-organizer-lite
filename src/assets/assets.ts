@@ -1,3 +1,5 @@
+//bundle all assets such as fonts, images and constants here
+
 import favicon from "./images/favicon.svg";
 import waves from "./images/wave.svg";
 import banner from "./images/banner.svg";
