@@ -12,6 +12,7 @@ interface _props {
 
 export default async function GlobalLayout({ children }: _props) {
 
+    //retrieve the pathname
     const headerList = await headers();
     const pathname = headerList.get("x-current-path");
 
@@ -24,6 +25,8 @@ export default async function GlobalLayout({ children }: _props) {
                     alt="Banner"
                     priority
                     title="Banner" />
+
+                {/* Map all hyperlinks in aside list */}
                 <div className="flex flex-col gap-2">
                     {asideLinks.map((link) =>
                         <Link
@@ -36,6 +39,8 @@ export default async function GlobalLayout({ children }: _props) {
                         </Link>
                     )}
                 </div>
+
+                {/* logout endpoint */}
                 <form
                     className="w-full pl-4 pr-2"
                     action="/api/auth/logout"
@@ -51,6 +56,8 @@ export default async function GlobalLayout({ children }: _props) {
             <div className="flex flex-col flex-1 h-full">
                 <header className="p-4 flex justify-between border-b-2 border-stack">
                     <div className="flex gap-4 items-center">
+
+                        {/* display route and link to index */}
                         <Link
                             title="Back"
                             prefetch
