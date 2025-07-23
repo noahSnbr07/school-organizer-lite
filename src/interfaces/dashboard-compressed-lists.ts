@@ -4,13 +4,11 @@ interface CompressedGrade {
     id: string;
     score: number;
     subject: { name: string; color: string; };
-    passed: boolean;
 }
 interface CompressedSubject {
     id: string;
     name: string;
     color: string;
-    advanced: boolean;
 }
 
 interface CompressedAbsence {
