@@ -55,10 +55,9 @@ model Grade {
   updated DateTime @updatedAt
 
   //props
-  subject Subject @relation(fields: [subjectId], references: [id])
+  subject Subject   @relation(fields: [subjectId], references: [id])
   score   Int
-  passed  Boolean
-  metGoal Boolean
+  type    GradeType @default(Test)
 
   //relations 
   subjectId String
@@ -73,9 +72,8 @@ model Subject {
   updated DateTime @updatedAt
 
   //props
-  name     String  @default("New Subject")
-  color    String
-  advanced Boolean @default(false)
+  name  String @unique @default("New Subject")
+  color String
 
   //relations 
   Event     Event[]
@@ -118,9 +116,4 @@ enum GradeType {
 enum AbsenceType {
   partial
   full
-}
-
-enum GradingSystem {
-  normal
-  advanced
 }
