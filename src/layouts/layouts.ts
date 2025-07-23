@@ -1,5 +1,7 @@
 import GlobalLayout from "./components/global-layout";
 
-export {
-    GlobalLayout,
+const Layouts = {
+    Global: GlobalLayout,
 }
+
+export default Layouts;

@@ -1,5 +1,5 @@
 'use server';
-import { GlobalLayout } from "@/layouts/layouts";
+import Layouts from "@/layouts/layouts";
 import React from "react";
 
 
@@ -10,8 +10,8 @@ interface _props {
 export default async function layout({ children }: _props) {
 
     return (
-        <GlobalLayout>
+        <Layouts.Global>
             {children}
-        </GlobalLayout>
+        </Layouts.Global>
     );
 }

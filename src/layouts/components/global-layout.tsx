@@ -67,7 +67,7 @@ export default async function GlobalLayout({ children }: _props) {
                         <b className="opacity-50"> {pathname?.replace("/", "")} </b>
                     </div>
                 </header>
-                <main className="flex-1 min-h-0 overflow-hidden">
+                <main className="flex-1 flex min-h-0 overflow-hidden">
                     {children}
                 </main>
             </div>
