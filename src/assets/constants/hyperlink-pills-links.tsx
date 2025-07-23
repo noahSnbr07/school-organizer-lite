@@ -10,10 +10,10 @@ export interface HyperlinkPill {
 }
 
 const hyperlinks: HyperlinkPill[] = [
-    { id: 0, href: "/grades/create", icon: <PlusIcon />, label: "Add Grade" },
-    { id: 1, href: "/absences/create", icon: <PlusIcon />, label: "Add Absence" },
-    { id: 2, href: "/subjects/create", icon: <PlusIcon />, label: "Add Subject" },
-    { id: 3, href: "/events/create", icon: <PlusIcon />, label: "Add Event" },
+    { id: 0, href: "/grades/new", icon: <PlusIcon />, label: "Add Grade" },
+    { id: 1, href: "/absences/new", icon: <PlusIcon />, label: "Add Absence" },
+    { id: 2, href: "/subjects/new", icon: <PlusIcon />, label: "Add Subject" },
+    { id: 3, href: "/events/new", icon: <PlusIcon />, label: "Add Event" },
 ];
 
 export default hyperlinks;

@@ -32,7 +32,6 @@ export default async function getData({ take }: _props): Promise<GetData | null>
     const compressedGrades: CompressedGrade[] = grades.map(g => ({
         id: g.id,
         score: g.score,
-        passed: g.passed,
         subject: { name: g.subject.name, color: g.subject.color, },
     }));
 
