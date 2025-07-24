@@ -1,7 +1,7 @@
 //bundle all assets such as fonts, images and constants here
 
-import favicon from "./images/favicon.svg";
-import waves from "./images/wave.svg";
+import favicon from "./images/favicon.png";
+import waves from "./animated/waves.svg";
 import banner from "./images/banner.svg";
 import hyperlinkPills from "./constants/hyperlink-pills-links";
 
