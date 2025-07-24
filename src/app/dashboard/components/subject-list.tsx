@@ -15,14 +15,6 @@ export default async function SubjectList({ subjects }: _props) {
                     key={subject.id}
                     className="flex gap-4 px-4 py-2 bg-stack rounded-md h-min items-center"
                     href={`/subject/${subject.id}`}>
-                    {subject.advanced ?
-                        <span
-                            title="Advanced Course Tag"
-                            className="bg-foreground font-bold text-background text-sm rounded-full px-2 py-0.5"> AC </span> :
-                        <span
-                            title="Basic Course Tag"
-                            className="bg-stack font-bold text-sm rounded-full px-2 py-0.5"> BC </span>
-                    }
                     <b> {subject.name} </b>
                 </Link>
             ))}
